@@ -17,6 +17,8 @@ Environment variables:
     OPENAI_MODEL    — Model to use (default: gpt-4o).
 """
 
+from __future__ import annotations
+
 import argparse
 import os
 import sys
@@ -186,7 +188,7 @@ def build_system_prompt(persona: dict) -> str:
 
 
 def get_ai_perspective(
-    client: "openai.OpenAI",
+    client: openai.OpenAI,
     model: str,
     persona: dict,
     topic: str,
@@ -223,7 +225,7 @@ def get_ai_perspective(
 
 
 def get_ai_synthesis(
-    client: "openai.OpenAI",
+    client: openai.OpenAI,
     model: str,
     topic: str,
     all_perspectives: list[tuple[str, str]],
